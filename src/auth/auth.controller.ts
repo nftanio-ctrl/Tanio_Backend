@@ -6,10 +6,22 @@ import { UsersService } from '../users/users.service';
 export class AuthController {
   constructor(private authService: AuthService,private usersService: UsersService,) {}
 
-  @Post('register')
-  async register(@Body() body: { username: string; password: string }) {
-    return this.usersService.createUser(body.username, body.password);
-  }
+
+@Post('register')
+async register(
+  @Body()
+  body: {
+    first_name: string;
+    last_name: string;
+    username: string;
+    email: string;
+    password: string;
+    phone?: string;
+  },
+) {
+  return this.usersService.createUser(body);
+}
+
 
   @Post('login')
   async login(@Body() body: { username: string; password: string }) {

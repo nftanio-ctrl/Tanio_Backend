@@ -8,9 +8,9 @@ export class UsersController {
 
   // Create user (open - for registration)
   @Post()
-  async create(@Body() body: { username: string; password: string }) {
-    return this.usersService.createUser(body.username, body.password);
-  }
+create(@Body() body: any) {
+  return this.usersService.createUser(body);
+}
 
   // Get all users (protected)
   @UseGuards(JwtAuthGuard)
