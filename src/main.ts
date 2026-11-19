@@ -12,6 +12,7 @@ async function bootstrap() {
     origin: [
       'http://localhost:3000',
       'http://localhost:3001',
+      'https://tanio-frontend.vercel.app',
     ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
@@ -24,3 +25,4 @@ async function bootstrap() {
 }
 
 bootstrap();
+
